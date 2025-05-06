@@ -1,5 +1,5 @@
 <h1>Project Name</h1>
-User Management with Role-Based Access using Clerk
+User Role Management with Clerk in Next.js
 
 <h2>Project Description</h2>
 <p>This project demonstrates how to implement user management with role-based access control (RBAC) in a Next.js App Router application using Clerk. It addresses the problem of managing user roles (e.g., admin, free-tier, and paid-tier) and their access permissions, particularly when dealing with shared resources like OpenAI keys.</p>
