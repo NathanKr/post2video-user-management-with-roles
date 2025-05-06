@@ -1,5 +1,5 @@
 <h1>Project Name</h1>
-User Management with Roles via Clerk
+User Management with Role-Based Access using Clerk
 
 <h2>Project Description</h2>
 <p>This project demonstrates how to implement user management with role-based access control (RBAC) in a Next.js App Router application using Clerk. It addresses the problem of managing user roles (e.g., admin, free-tier, and paid-tier) and their access permissions, particularly when dealing with shared resources like OpenAI keys.</p>
@@ -13,11 +13,11 @@ User Management with Roles via Clerk
 
 <h3>Admin Role Setup</h3>
 <p>The admin role is created from the Clerk dashboard. See the image below:</p>
-<img src='./figs/create-admin-role-from-dashboard.png' alt="Creating admin rol
+<img src='./figs/create-admin-role-from-dashboard.png' alt='Clerk Dashboard showing the option to create an admin role.'/>
 
 <h2>Usage</h2>
 
-Run the devlopment server
+Run the development server
 
 ```bash
 npm run dev
@@ -79,12 +79,12 @@ if (isAdminRoute(req)) {
 <SignUpButton forceRedirectUrl={PageUrl.SignUpSuccess} />
 ```
 
-<h3>Do i need clerk role or use privateData\publicData role property</h3>
+<h3>Do I need clerk role or use privateData\publicData role property</h3>
   <p>Clerk Roles offer fine-grained permissions. However, for <b>post2video</b>, we only need to distinguish users by role <em>name</em> (admin, free-tier, etc.) without specific permissions attached to those roles <em>within Clerk</em>. Therefore, storing the user's role in <code>privateData</code> is simpler and sufficient.</p>
 
 
 
-<h3>Can i protect pages via midleware only</h3>
+<h3>Can I protect pages via middleware only</h3>
 <p>Yes, <code>clerkMiddleware</code> is the primary mechanism for protecting pages within <b>post2video</b>. It intercepts requests and verifies user authentication and roles before granting access.</p>
 
 
@@ -105,7 +105,7 @@ const isAdminRoute = createRouteMatcher([PageUrl.Admin]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (!isPublicRoute(req)) {
-    await auth.protect(); // -- if not login redirect to sign in otherwise contine
+    await auth.protect(); // -- if not login redirect to sign in otherwise continue
 
     // --- come here means user is logged in
     const { userId } = await auth();
