@@ -79,12 +79,12 @@ if (isAdminRoute(req)) {
 <SignUpButton forceRedirectUrl={PageUrl.SignUpSuccess} />
 ```
 
-<h3>do i need clerk role or use privateData\publicData role property</h3>
+<h3>Do i need clerk role or use privateData\publicData role property</h3>
   <p>Clerk Roles offer fine-grained permissions. However, for <b>post2video</b>, we only need to distinguish users by role <em>name</em> (admin, free-tier, etc.) without specific permissions attached to those roles <em>within Clerk</em>. Therefore, storing the user's role in <code>privateData</code> is simpler and sufficient.</p>
 
 
 
-<h3>can i protect pages via midleware only</h3>
+<h3>Can i protect pages via midleware only</h3>
 <p>Yes, <code>clerkMiddleware</code> is the primary mechanism for protecting pages within <b>post2video</b>. It intercepts requests and verifies user authentication and roles before granting access.</p>
 
 
@@ -193,7 +193,7 @@ export default async function SignupSuccessPage() {
 <img src='./figs/demo-non-admin-user-login.png' alt="Non-admin user logged in"/>
 
 <h3>Admin user logged in</h3>
-<p>The Admin tab is shown in <b>post2video</b>.</p>
+<p>The Admin tab is also shown in <b>post2video</b>.</p>
 <img src='././/figs/demo-admin-user-login.png' alt="Admin user logged in"/>
 
 <h3>Non-admin user trying to access the admin page</h3>
